@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no" />
+  <meta name="theme-color" content="#0b0808" />
+  <meta name="color-scheme" content="dark" />
+  <title>榆野岛 · 小莲花座位视角</title>
+  <script type="module" crossorigin src="./assets/index-CgU29NdE.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-RpCm0aHv.css">
+</head>
+<body>
+  <canvas id="scene" aria-label="杭州奥体中心网球中心三维座位图"></canvas>
+
+  <div class="loader" id="loader">
+    <div class="loader-mark"><i></i><i></i><i></i></div>
+    <p>YUYE ISLAND</p>
+    <h1>正在进入小莲花</h1>
+    <div class="loader-line"><span id="loaderFill"></span></div>
+    <small id="loaderText">建立场馆结构</small>
+  </div>
+
+  <header class="top-chrome" id="topChrome">
+    <div class="wordmark">
+      <span>2026 3RD TOUR</span>
+      <strong>榆野岛</strong>
+    </div>
+    <div class="date-pill"><b>08.22</b><span>HANGZHOU</span></div>
+  </header>
+
+  <div class="scene-caption" id="sceneCaption">
+    <span>杭州奥体中心网球中心</span>
+    <strong>拖动环看 · 双指缩放 · 点击座区</strong>
+  </div>
+
+  <button class="reset-view" id="resetView" aria-label="重置场馆视角">⌖</button>
+
+  <section class="seat-sheet" id="seatSheet" hidden>
+    <div class="sheet-grip"></div>
+    <button class="sheet-close" id="closeSheet" aria-label="关闭">×</button>
+    <p class="sheet-overline">SELECT YOUR VIEW</p>
+    <div class="sheet-title-row">
+      <div><small id="zoneType">看台区域</small><h2 id="zoneName">看台 A 区</h2></div>
+      <span class="zone-dot"></span>
+    </div>
+    <div class="seat-inputs">
+      <label><span>排</span><input id="rowInput" type="number" inputmode="numeric" min="1" value="8" /><small id="rowRange">1–27</small></label>
+      <i></i>
+      <label><span>座</span><input id="seatInput" type="number" inputmode="numeric" min="1" value="8" /><small id="seatRange">1–24</small></label>
+    </div>
+    <button class="enter-view" id="enterView">从这个位置看 <span>↗</span></button>
+    <p class="sheet-note">依据公开座位图与场馆结构推算，仅作视野参考</p>
+  </section>
+
+  <section class="seat-hud" id="seatHud" hidden>
+    <div class="seat-hud-top">
+      <button id="backArena" aria-label="返回场馆">←</button>
+      <div><small>YOUR VIEW</small><strong id="seatTitle">看台 A 区 · 8排8座</strong></div>
+      <span></span>
+    </div>
+    <div class="camera-frame" aria-hidden="true">
+      <i class="grid-v grid-v-one"></i><i class="grid-v grid-v-two"></i>
+      <i class="grid-h grid-h-one"></i><i class="grid-h grid-h-two"></i>
+    </div>
+    <div class="risk-card">
+      <small>主要遮挡风险</small>
+      <p id="riskText">主要视线基本开阔</p>
+    </div>
+    <div class="zoom-control">
+      <div><span>焦段</span><output id="zoomValue" for="zoomRange">1×</output></div>
+      <input id="zoomRange" type="range" min="0.5" max="10" step="0.1" value="1" aria-label="缩放倍率" />
+      <div class="zoom-scale"><span>0.5×</span><span>10×</span></div>
+    </div>
+    <div class="lens-bar" aria-label="观察模式">
+      <button class="active" data-lens="eye"><b>肉眼</b><small>自然视野</small></button>
+      <button data-lens="phone"><b>1×</b><small>手机主摄</small></button>
+      <button data-lens="tele"><b>长焦</b><small>舞台细节</small></button>
+    </div>
+    <p class="look-hint">左右环视 · 上下轻移视线</p>
+  </section>
+
+</body>
+</html>
